@@ -1,0 +1,11 @@
+#section{
+    background-color: aliceblue;
+    height: 88vh;
+    width: 100%;
+    text-align: center;
+}
+
+#section p{
+    font-size: 70px;
+    margin-top: 15%;
+}
