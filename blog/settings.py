@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '%(+9hrr3j&c^qr_9f5a8=0@6%%b=c0)ab#(hk-fx@&#5w)=8%b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["Bloger.herokuapp.com",  "localhost", '127.0.0.1']
+ALLOWED_HOSTS = ["specialbloger.herokuapp.com",  "localhost", '127.0.0.1']
 # ALLOWED_HOSTS = ["*"]
 
 
