@@ -47,5 +47,5 @@ def Articles(request):
 
 def FullBlog(request, id):
     blog = Blog.objects.get(id=id)
-    context = {'blog':blog}
+    context = {'blogs':blog}
     return render(request, 'app/fullblog.html', context)

@@ -1,34 +1,5 @@
 {% extends 'app/basic.html' %}
 
-{% block cls %} "bg-primary" {% endblock cls %}
-{% block body %}
-    <h1 class="fw-bold text-center mt-3">Blogs</h1>
-    
-    <!-- blog -->
-    <div class="container mb-5 p-3 bg-light">
-      <div class="row align-items-center">
-
-        {% for blog in blogs %}
-        <div class="col-md-4">
-          <div class="card mt-4">
-            <a href="{% url 'blog' blog.id %}"><img src="{{ blog.img }}" class="card-img-top" alt="..."></a>
-            <div class="card-body ">
-              <a href="{% url 'blog' blog.id %}" class="text-light text-decoration-none ">
-                <h5 class="card-title fw-bold effect-underline">{{ blog.title }}</h5>
-              </a>
-              <p class="card-text"> {{ blog.text|truncatewords_html:20|safe }} </p>
-              <p class="card-text"><small class="text-muted"> {{ blog.date_publish }} </small></p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-
-      </div>
-      </div>
-    </div>
-{% endblock body %}{% extends 'app/basic.html' %}
-
-{% block cls %} "bg-primary" {% endblock cls %}
 {% block body %}
     <h1 class="fw-bold text-center mt-3">Blogs</h1>
     
