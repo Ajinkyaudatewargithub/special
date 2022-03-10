@@ -2,8 +2,24 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
 from .models import Language, Questions, ExerciseQuestions, Blog
-
+from django.contrib.auth.views import LoginView, LogoutView
+from .forms import LoginForm
 # Create your views here.
+
+class Login(LoginView):
+    template_name='app/login.html' 
+    authentication_form=LoginForm
+
+class Logout(LogoutView):
+    template_name='app/logout.html'
+
+
+class DashBoard(TemplateView):
+    template_name = 'app/dashboard.html'
+    model = Questions, ExerciseQuestions, Blog
+    
+
+
 
 class HomeView(View):
     def get(self, request):
