@@ -4,15 +4,15 @@
     <h1 class="fw-bold text-center mt-3">Blogs</h1>
     
     <!-- blog -->
-    <div class="container mb-5 p-3 bg-light">
+    <div class="container mb-5 p-3">
       <div class="row align-items-center">
 
         {% for blog in blogs %}
         <div class="col-md-4">
           <div class="card mt-4">
-            <a href="{% url 'blog' blog.id %}"><img src="{{ blog.img }}" class="card-img-top" alt="..."></a>
+            <a href="{% url 'blog' blog.slug %}"><img src="{{ blog.img }}" class="card-img-top" alt="..."></a>
             <div class="card-body ">
-              <a href="{% url 'blog' blog.id %}" class="text-light text-decoration-none ">
+              <a href="{% url 'blog' blog.slug %}" class="text-dark text-decoration-none ">
                 <h5 class="card-title fw-bold effect-underline">{{ blog.title }}</h5>
               </a>
               <p class="card-text"> {{ blog.text|truncatewords_html:20|safe }} </p>
@@ -24,5 +24,4 @@
 
       </div>
       </div>
-    </div>
 {% endblock body %}

@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.views import View
 from django.views.generic.base import TemplateView
-from .models import Language, Questions, ExerciseQuestions, Blog
+from .models import Questions, Topic, Blog
 from django.contrib.auth.views import LoginView, LogoutView
 from .forms import LoginForm
 # Create your views here.
@@ -16,26 +17,36 @@ class Logout(LogoutView):
 
 class DashBoard(TemplateView):
     template_name = 'app/dashboard.html'
-    model = Questions, ExerciseQuestions, Blog
+    model = Questions, Blog
     
-
-
-
+    
 class HomeView(View):
     def get(self, request):
-        lang = Language.objects.all()
         bg = Blog.objects.all()
-        context = {'language':lang, 'blogs':bg}
+        context = {'blogs':bg}
         return render(request, 'app/home.html', context)
 
-class ExerciseView(View):
-    def get(self, request):
-        question = ExerciseQuestions.objects.all()
-        context = {'questions':question}
+def ExerciseView(request):
+
+    if request.method=='POST':
+        id = request.POST['FilterSelect']
+        question = Questions.objects.filter(topic_tag=id)
+        tp = Topic.objects.all()
+        context = {'questions':question, 'topics':tp}
         return render(request, 'app/exercise.html', context)
 
-def BriefQuestionView(request, id):
-    q = Questions.objects.get(id=id)
+    else:
+        question = Questions.objects.all()
+        tp = Topic.objects.all()
+        context = {'questions':question, 'topics':tp}
+        return render(request, 'app/exercise.html', context)
+
+def BriefQuestionView(request, slug_text):
+    q = Questions.objects.filter(slug=slug_text)
+    if q.exists():
+        q = q.first()
+    else:
+        return HttpResponse("<h1>Page Not Found!</h1>")
     context = {'question':q}
     return render(request, 'app/briefq.html', context)
 
@@ -45,7 +56,12 @@ def Articles(request):
     context = {'blogs':blog}
     return render(request, 'app/article.html', context)
 
-def FullBlog(request, id):
-    blog = Blog.objects.get(id=id)
-    context = {'blogs':blog}
+def FullBlog(request, slug_text):
+    blog = Blog.objects.filter(slug=slug_text)
+    if blog.exists():
+        blog = blog.first()
+    else:
+        return HttpResponse("<h1>Page Not Found!</h1>")
+
+    context = {'blog':blog}
     return render(request, 'app/fullblog.html', context)

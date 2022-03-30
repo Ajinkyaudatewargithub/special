@@ -1,19 +1,19 @@
 from django.contrib import admin
-from . models import Language, ExerciseQuestions, Questions, Blog
+from . models import Questions, Blog, Topic
 
 # Register your models here.
 
-@admin.register(Language)
-class AdminLanguages(admin.ModelAdmin):
-    list_display = ['name', 'description']
+@admin.register(Topic)
+class AdminTopic(admin.ModelAdmin):
+    list_display = ['name']
 
-@admin.register(ExerciseQuestions)
-class AdminExerciseQuestions(admin.ModelAdmin):
-    list_display = ['head', 'topic_tag']
+# @admin.register(ExerciseQuestions)
+# class AdminExerciseQuestions(admin.ModelAdmin):
+#     list_display = ['head', 'topic_tag']
 
 @admin.register(Questions)
 class AdminQuestions(admin.ModelAdmin):
-    list_display = ['heading']
+    list_display = ['title', 'topics', 'slug']
     class Media:
         js= ('tinyInject.js',)
 

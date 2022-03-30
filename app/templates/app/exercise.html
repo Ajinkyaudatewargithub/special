@@ -1,20 +1,47 @@
 {% extends 'app/basic.html' %}
 
 {% block body %}
-  <div class="container ">
-    <div class="row p-2">
-      
-      {% for h in questions %}
-      <div class="col-sm-6 p-2 mt-3">
-        <div class="card shadow p-3 me-3 mb-5 bg-body rounded">
-          <div class="card-body ">
-            <h5 class="card-title fw-bold fs-3">{{ h.head }}</h5>
-            <p class="card-text">{{ h.topic_tag }}</p>
-            <a href="{% url 'question' h.id  %}" class="btn btn-secondary">View</a>
+<div class="container-fluid">
+  <div class="row p-2 mt-5">
+
+    <!-- filter -->
+    <div class="col-sm-2 border-end border-4 me-4 ms-2">
+      <h2 class="mb-4"><b>Filters</b></h2>
+      <form method="post" action="{% url 'exercise' %}">
+        {% csrf_token %}
+        <h3 class="mb-3">Topics</h3>
+        <div class="input-group">
+          <select class="form-select" id="inputGroupSelect04" name="FilterSelect"
+            aria-label="Example select with button addon">
+            <option value="0">All</option>
+            {% for q in topics %}
+            <option value="{{q.id}}">{{q}}</option>
+            {% endfor %}
+            <input class="btn btn-outline-secondary" type="submit" value="Search"></input>
+          </select>
+        </div>
+      </form>
+  </div>
+
+    <!-- question list  -->
+    <div class="col-sm-9 ms-2">
+      <div class="container">
+        <div class="row ">
+          {% for h in questions %}
+          <div class="col-lg-4 p-2 mt-3">
+            <div class="card shadow p-3 me-3 border border-3 bg-body rounded">
+              <div class="card-body">
+                <h5 class="card-title fw-bold fs-3">{{ h.title }}</h5>
+                <p class="card-text">{{ h.topics }}</p>
+                <a href="{% url 'question' h.slug  %}" class="btn btn-primary">View</a>
+              </div>
+            </div>
           </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
     </div>
   </div>
+</div>
+</div>
 {% endblock body %}
