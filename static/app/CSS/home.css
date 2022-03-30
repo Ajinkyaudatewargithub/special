@@ -1,0 +1,673 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    font-family: sans-serif;
+    overflow-y: auto;
+}
+
+*::-webkit-scrollbar-corner{
+    overflow-y: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(224, 232, 227), rgb(159, 161, 162)) repeat scroll 0% 0%;
+}
+
+/********************************************************* */
+#check{
+    display: none;
+}
+
+#barbtn{
+    display: none;
+}
+
+/* ******************************************************************* */
+
+img{
+    width: 100vw;
+    height: 130vh;
+    position: absolute;
+}
+
+.grid-container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    'navbar navbar navbar'
+    'section section section'
+    'footer footer footer'
+    ;
+}
+
+.layout {
+    padding: 10px;
+}
+
+/********************************************************* */
+/* Nacigation menu */
+
+#navbar {   
+    grid-area: navbar;
+    position: relative;
+    text-align: center;
+    margin: 10px;
+    overflow-x: hidden;
+}
+
+.navlink {
+    padding: 10px;
+    background: none;
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-left: 23px;
+}
+
+.navlink:hover, .navlink:active, .navlink:focus {
+    color: black;
+    background-color: aliceblue;
+}
+
+#refer {
+    position: absolute;
+    top: 1px;
+    font-size: 33px;
+    color: #595959;
+    cursor: pointer;
+    left: 20px;
+}
+
+/********************************************************* */
+
+#section {
+    grid-area: section;
+    position: absolute;
+    top: 144px;
+    left: 900px;
+    width: 375px;
+}
+
+#section p{
+    color: aliceblue;
+    margin: 8px;
+    font-size: 19px;
+}
+
+/********************************************************* */
+
+#notes {
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(224, 232, 227), rgb(159, 161, 162)) repeat scroll 0% 0%;
+    width: 100vw;
+    position: absolute;
+    top: 790px;
+    overflow-x: hidden;
+}
+
+/********************************************************* */
+
+#explore {
+    padding: 15px;
+    border: 6px solid white;
+    display: inline;
+    position: absolute;
+    top: 679px;
+    left: 488px;
+    color: floralwhite;
+}
+
+/********************************************************* */
+
+#cont {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+#lan{
+    position: absolute;
+    top: 0px;
+    font-family: tahoma;
+}
+
+.box {
+    width: 317px;
+    background: white;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 7px -3px;
+    border-radius: 10px;
+    overflow: initial;
+}
+
+.language-box{
+    margin: 15px;
+}
+
+p {
+    margin-bottom: 17px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 19px;
+}
+
+.lang-btn {
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 8px;
+    position: relative;
+    top: 8px;
+    background: rgb(96, 96, 96);
+    color: white;
+}
+
+.lang-btn:hover, .lang-btn:active {
+    background: linear-gradient(to right, rgb(93, 99, 102) 0%, rgb(112, 116, 121) 51%, rgb(125, 139, 147) 100%);
+
+}
+
+
+/********************************************************* */
+
+h4 {
+    font-size: 36px;
+    color: #ddd;
+}
+
+#footer {
+    width: 100vw;
+    background: #353535;
+    text-align: center;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.link:hover, .link:active {
+    color: wheat;
+}
+
+#foot-link{
+    color: white;
+    margin: 10px;
+    margin-bottom: 10px;
+}
+
+#copyright{
+    color: white;
+    margin: 10px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (min-width:320px) and (max-width:400px) {
+    .navlink{
+        display: none;
+    }
+
+    html, body{
+        overflow-y: auto;
+    }
+
+    #refer {
+        position: relative;
+        top: -7px;
+        font-size: 23px;
+        color: #373636;
+        cursor: pointer;
+        left: 79px;
+    }
+
+    #notes {
+        top: 370px;
+        overflow-x: hidden;
+    }
+
+    img {
+        width: 100vw;
+        height: 53vh;
+        position: absolute;
+    }
+
+    #cont {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        width: auto;
+    }
+
+    #explore {
+        position: absolute;
+        top: 310px;
+        left: 80px;
+        border: 3px solid;
+        font-size: 16px;
+    }
+
+    #section{
+        display: none;
+    }
+
+    #footer {
+        height: 300px;
+    }
+
+    .link {
+        display: block;
+        margin: 25px;
+        padding: 0px;
+    }
+
+    #copyright {
+        margin: 16px;
+    }
+
+    .box{
+        margin-top: 45px;
+    }
+
+/* /////////////////////// */
+#barbtn {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -3px;
+    font-size: 31px;
+    cursor: pointer;
+}
+
+
+
+    input[type="checkbox"]:checked ~ #navbar {
+        content: '';
+        display: block;
+        background: rgb(115, 122, 128);
+        height: 189px;
+        opacity: 0.9;
+        width: 88%;
+        margin-right: 0px;
+    }
+
+    
+    input[type='checkbox']:checked ~ div#navbar > a {
+        display: block;
+        border: 2px solid white;
+        margin-bottom: 10px;
+        width: 246px;
+    }
+
+    input[type='checkbox']:checked ~ div#navbar > h3 {
+        display: none;
+    }
+
+    
+    input[type="checkbox"]:checked ~ div#navbar label i#barbtn {
+        top: 0px;
+    }
+
+    input[type="checkbox"]:checked ~ div#notes > h1 {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ div#notes ~ div#cont > div.box {
+        margin-top: 45px;
+    }
+}
+
+/* /////////////////////////////////////////////////////////////// */
+
+@media only screen and (min-width:401px) and (max-width:501px) {
+    .navlink{
+        display: none;
+    }
+
+    img{
+        height: 26pc;
+    }
+
+    #notes {
+        top: 415px;
+        overflow-x: hidden;
+    }
+
+
+    #explore {
+        left: 78px;
+        font-size: larger;
+        border: 3px solid;
+        top:  346px;
+    }
+
+    #refer {
+        position: relative;
+        top: 0px;
+        font-size: 26px;
+        color: #000;
+        cursor: pointer;
+        left: 115px;
+    }
+
+    /* hamburger */
+    #barbtn {
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: 0px;
+        font-size: 31px;
+        cursor: pointer;
+    }
+
+    #section{
+        display: none;
+    }
+
+    #lan {
+        top: 4px;
+    }
+
+
+
+    input[type="checkbox"]:checked ~ #navbar {
+        content: '';
+        display: block;
+        background: rgb(115, 122, 128);
+        height: 189px;
+        opacity: 0.9;
+        margin-right: 0px;
+    }
+    input[type="checkbox"]:checked ~ div#navbar label i#barbtn {
+        top: 0px;
+    }
+    
+    input[type='checkbox']:checked ~ div#navbar > a {
+        display: block;
+        border: 2px solid white;
+        margin-bottom: 10px;
+        width: 328px;
+    }
+
+    input[type='checkbox']:checked ~ div#navbar > h3 {
+        display: none;
+    }
+
+    
+    input[type="checkbox"]:checked ~ div#notes {
+        top: 415px;
+    }
+
+    input[type="checkbox"]:checked ~ div#notes > h1 {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ div#notes ~ div#cont > div.box {
+        margin-top: 45px;
+    }
+
+}
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (min-width:502px) and (max-width:600px) {
+    .navlink{
+        display: none;
+    }
+
+    img {
+        height: 47vh;
+    }
+
+    #refer {
+        position: absolute;
+        top: 3px;
+        font-size: 26px;
+        color: #000;
+        cursor: pointer;
+        left: 269px;
+    }
+
+    /* hamburger */
+    #barbtn {
+        display: block;
+        position: relative;
+        top: -9px;
+        left: -3px;
+        font-size: 31px;
+        cursor: pointer;
+    }
+
+    #section{
+        display: none;
+    }
+
+
+
+    input[type="checkbox"]:checked ~ #navbar {
+        content: '';
+        display: block;
+        background: rgb(115, 122, 128);
+        opacity: 0.9;
+        width: 88%;
+        margin-right: 0px;
+    
+    }
+
+    
+    input[type='checkbox']:checked ~ div#navbar > a {
+        display: block;
+        border: 2px solid white;
+        margin-bottom: 10px;
+    }
+
+    input[type='checkbox']:checked ~ div#navbar > h3 {
+        display: none;
+    }
+
+    
+    /* input[type="checkbox"]:checked ~ div#notes {
+        top: -90px;
+    } */
+
+    input[type="checkbox"]:checked ~ div#notes > h1 {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ div#notes ~ div#cont > div.box {
+        margin-top: 45px;
+    }
+
+/* ///////////////////////////////////////// */
+
+    img{
+        height: 25pc;
+    }
+
+    #notes {
+        overflow-x: hidden;
+    }
+
+    #explore {
+        left: 131px;
+        font-size: 23px;
+        top: 343px;
+        border: 4px solid;
+    }
+
+    #lan {
+        top: 3px;
+    }
+
+    .box {
+        margin-top: 45px;
+    }
+
+}
+
+
+/* ************************************************************************************ */
+
+@media only screen and (min-width:601px) and (max-width:750px){
+    
+    #explore {
+        padding: 15px;
+        border: 4px solid white;
+        display: inline;
+        position: absolute;
+        top: 424px;
+        left: 166px;
+        color: floralwhite;
+        font-size: 29px;
+    }
+
+    #section {
+        display: none;
+    }
+
+    img {
+        height: 130vh;
+    }
+
+    #refer {
+        position: absolute;
+        top: 4px;
+        font-size: 26px;
+        color: #595959;
+        cursor: pointer;
+        left: -3px;
+    }
+
+    #footer {
+        width: 100vw;
+        background: #353535;
+        text-align: center;
+        height: 40vh;
+    }
+
+    .navlink {
+        padding: 10px;
+        background: none;
+        text-decoration: none;
+        color: black;
+        font-size: 19px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        margin-left: -5px;
+    }
+
+    #notes {
+        background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(224, 232, 227), rgb(159, 161, 162)) repeat scroll 0% 0%;
+        width: 100vw;
+        position: absolute;
+        top: 516px;
+        overflow-x: hidden;
+    }
+}
+
+/* ***************************************************************************** */
+
+@media only screen and (min-width:751px) and (max-width:900px){
+    img {
+        height: 110vh;
+    }
+    
+    #explore {
+        top: 362px;
+        left: 228px;
+    }
+
+    #refer {
+        top: 4px;
+        left: -3px;
+    }
+
+    #footer {
+        width: 100vw;
+        background: #353535;
+        text-align: center;
+        height: 40vh;
+    }
+
+    #section{
+        display: none;
+    }
+
+    .navlink {  
+        margin-left: 54px;
+    }
+    #notes {
+        top: 505px;
+    }
+}
+
+/* ******************************************************************************* */
+
+@media only screen and (min-width:901px) and (max-width:1025px){
+    #explore {
+        display:none;
+    }
+
+    #section {
+        display: none;
+    }
+
+    #navbar{
+        display: none;
+    }
+
+    .grid-container{
+        background-color: none;
+    }
+
+    .grid-container::after{
+        content: 'View is not available.You are requested to use mobile or desktop';
+        color: black;
+        font-size: 3rem;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+    }
+
+    img{
+        display: none;
+    }
+
+    #refer {
+        display: none;
+    }
+
+    #footer {
+        display: none;
+    }
+    
+    .navlink {
+        display: none;
+    }
+
+    #notes {
+        display: none;
+    }
+}
