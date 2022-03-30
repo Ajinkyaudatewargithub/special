@@ -8,13 +8,6 @@ class Topic(models.Model):
 
     def __str__(self):
         return self.name
-    
-# class ExerciseQuestions(models.Model):
-#     head = models.CharField(max_length=50, default='')
-#     topic_tag = models.CharField(max_length=100, default='')
-
-#     def __str__(self):
-#         return self.head
 
 class Questions(models.Model):
     title = models.CharField(max_length=250, null=True, blank=True)
