@@ -1,6 +1,6 @@
 var script= document.createElement('script');
 script.type='text/javascript';
-script.src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js";
+script.src="https://cdn.tiny.cloud/1/xrbax21awsqzvdrdjkwgor0doafcdkc3k7nguf7kh3136yp2/tinymce/5/tinymce.min.js";
 document.head.appendChild(script);
 
 script.onload=function(){

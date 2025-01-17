@@ -7,9 +7,6 @@ from . models import Questions, Blog, Topic
 class AdminTopic(admin.ModelAdmin):
     list_display = ['name']
 
-# @admin.register(ExerciseQuestions)
-# class AdminExerciseQuestions(admin.ModelAdmin):
-#     list_display = ['head', 'topic_tag']
 
 @admin.register(Questions)
 class AdminQuestions(admin.ModelAdmin):
